@@ -17,4 +17,13 @@ var twitterKeys = new Twitter(keys.twitter);
 console.log("spotifyKeys is " + JSON.stringify(spotifyKeys));
 console.log("twitterKeys is " + JSON.stringify(twitterKeys));
 
+// Part 1: command: node liri.js my-tweets
+// This will show your last 20 tweets and when they were created at in your terminal/bash window.
 
+function getTweets(){
+    //parameters for twitter function.
+	var parameters = {
+		screen_name: 'FerdaAMZNPrizes',
+		count: 20
+	};
+} 
