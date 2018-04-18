@@ -140,7 +140,8 @@ function getMovie(){
 	}else{
 		movieSearchTerm = userParameters;
 	};
-
+    // this is the queryURL that will be used to make the call - it holds the apikey, returns a "short" plot, type json, and 
+    // the tomatoes flag attempts to return rottenTomatoes data although most of that is now deprecated as of may 2017 
     let queryURL = 'http://www.omdbapi.com/?t=' + movieSearchTerm +'&apikey=trilogy&y=&plot=short&tomatoes=true&r=json';
     request(queryURL, function(error, response, body){
 	    if(!error && response.statusCode == 200){
