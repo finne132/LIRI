@@ -9,8 +9,8 @@ var request = require("request");
 var fs = require('fs');
 
 // get the API key values from the .env file via keys.js
-var spotifyKeys = new Spotify(keys.spotify);
-var twitterKeys = new Twitter(keys.twitter);
+var spot = new Spotify(keys.spotify);
+var twit = new Twitter(keys.twitter);
 
 // Part 0: we need a switch structure to read in command line arguments and execute the associated functions
 
@@ -70,7 +70,7 @@ function getTwitter(){
 
     // make the call using our twitterKey object and the APIs preferred syntax
     // pass in the parameters to make sure we only grab 20 tweets from the specified screen name
-    twitterKeys.get('statuses/user_timeline', parameters, function(error, tweets, response){
+    twit.get('statuses/user_timeline', parameters, function(error, tweets, response){
 		if (!error) {
 	        for (let i=0; i<tweets.length; i++) {
 	            var returnedData = ('Tweet Number: ' + (i+1) + '\n' + tweets[i].created_at + '\n' + tweets[i].text + '\n');
@@ -104,7 +104,7 @@ function getSpotify(){
 		searchTerm = userParameters;
 	}
 	//execute the spotify search using the searchTerm
-	spotifyKeys.search({type:'track', query:searchTerm}, function(error,data){
+	spot.search({type:'track', query:searchTerm}, function(error,data){
 	    if(error){
 	        console.log(`The call to Spotify encountered an error: ${error}`);
 	        return;
@@ -195,6 +195,9 @@ function getSays(){
 switcher();
 
 // stretch/bonus goals: 
-// 1. output the data to a .txt file called log.txt.
+// 1. output the data to a .txt file called log.txt
+    // yes, I did this 
 // 2. Make sure you append each command you run to the log.txt file
+    // yes, it uses append instead of write
 // 3. Do not overwrite your file each time you run a command
+    // yes, it uses append isntead of write
