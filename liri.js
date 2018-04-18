@@ -77,7 +77,12 @@ function getTwitter(){
 	        for (let i=0; i<tweets.length; i++) {
 	            var returnedData = ('Tweet Number: ' + (i+1) + '\n' + tweets[i].created_at + '\n' + tweets[i].text + '\n');
 	            console.log(returnedData);
-	            console.log("-------------------------");
+                console.log("-------------------------");
+                fs.appendFile("log.txt", `NEW TWITTER SEARCH:\nNunmber ${i+1}:\nCreated On: ${tweets[i].created_at}\nContent: ${tweets[i].text}`,function(err){
+                    if(err){
+                    console.log(`aw shit dog there was an error writing to the logfile: ${err}`)
+                    }
+                })
 	        }
         }
         else {
