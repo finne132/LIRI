@@ -17,6 +17,10 @@ var twitterKeys = new Twitter(keys.twitter);
 // pass in the 3rd argument from the command line to the switcher function
 let userFunction = process.argv[2];
 
+// pass in the 4th argument from the command line to the userParameters varaible. Anything after process.argv[2] 
+// is considered a "user paramater" because the program doesn't use any other agrs and the user will likely
+// use spaces to enter things like song and movie titles, so I have a for loop after this to take all 
+// "user parameters" and append them to a single variable so we can pass it as a parameter to the various APIs 
 var userParameters = process.argv[3];
 
 // handler for multiple-word user paramaeters (song or movie names, etc)
