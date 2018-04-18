@@ -32,6 +32,10 @@ for(let i=4; i<process.argv.length; i++){
 }
 // example input: this is the song name
 // example output: this+is+the+song+name 
+let timeStamp;
+function getTimeStamp(){
+    timeStamp = new Date(); 
+}
 
 function switcher(){
 	switch(userFunction){
@@ -63,6 +67,7 @@ function switcher(){
 // This will show your last 20 tweets and when they were created at in your terminal/bash window.
 function getTwitter(){
     //parameters that will be passed with the "get" call below
+    //if the user enters a valid twitter handle 
 	var parameters = {
 		screen_name: userParameters, // your twitter screen name
 		count: 20 // how many tweets you want returned
@@ -76,7 +81,8 @@ function getTwitter(){
 	            var returnedData = ('Tweet Number: ' + (i+1) + '\n' + tweets[i].created_at + '\n' + tweets[i].text + '\n');
 	            console.log(returnedData);
                 console.log("-------------------------");
-                fs.appendFile("log.txt", `NEW TWITTER SEARCH:\nNunmber ${i+1}:\nCreated On: ${tweets[i].created_at}\nContent: ${tweets[i].text}`,function(err){
+                getTimeStamp();
+                fs.appendFile("log.txt", `***New Log Entry at ${timeStamp}***\nNEW TWITTER SEARCH EVENT:\nNunmber ${i+1}:\nCreated On: ${tweets[i].created_at}\nContent: ${tweets[i].text}\n`,function(err){
                     if(err){
                     console.log(`aw shit dog there was an error writing to the logfile: ${err}`)
                     }
@@ -86,6 +92,7 @@ function getTwitter(){
         else {
             // if error is true, log to the console that we ran into an error and instruct the user to try again
             console.log("THERE WAS AN ERROR PLEASE TRY AGAIN")
+            
         };
 	});
 } 
@@ -128,7 +135,8 @@ function getSpotify(){
                 console.log("Preview URL: " + data.tracks.items[0].preview_url);
             };
             console.log("Album Name: " + data.tracks.items[0].album.name);
-            fs.appendFile("log.txt", `NEW SONG QUERIED:\nArtist Name: ${data.tracks.items[0].artists[0].name}\nSong Name: ${data.tracks.items[0].name}\nPreview URL: ${data.tracks.items[0].preview_url}\nAlbum Name:${data.tracks.items[0].album.name}\n------\n`,function(err) {
+            getTimeStamp();
+            fs.appendFile("log.txt", `***New Log Entry at ${timeStamp}***\nNEW SONG SEARCH EVENT:\nArtist Name: ${data.tracks.items[0].artists[0].name}\nSong Name: ${data.tracks.items[0].name}\nPreview URL: ${data.tracks.items[0].preview_url}\nAlbum Name:${data.tracks.items[0].album.name}\n------\n`,function(err) {
             });
 	    }
 	});
@@ -166,7 +174,8 @@ function getMovie(){
 	        console.log("Language: " + JSON.parse(body).Language);
 	        console.log("Plot: " + JSON.parse(body).Plot);
             console.log("Actors: " + JSON.parse(body).Actors);
-            fs.appendFile("log.txt", `NEW MOVIE QUERIED:\nTitle: ${JSON.parse(body).Title}\nYear: ${JSON.parse(body).Year}\nIMDB Rating: ${JSON.parse(body).imdbRating}\nRotten Tomatoes Score: ${JSON.parse(body).Ratings[1].Value}\nCountry of Production: ${JSON.parse(body).Country}\nLanguage: ${JSON.parse(body).Language}\nPlot: ${JSON.parse(body).Plot}\nActors: ${JSON.parse(body).Actors}\n------\n`, function(err) {
+            getTimeStamp();
+            fs.appendFile("log.txt", `***New Log Entry at ${timeStamp}***\nNEW MOVIE SEARCH EVENT:\nTitle: ${JSON.parse(body).Title}\nYear: ${JSON.parse(body).Year}\nIMDB Rating: ${JSON.parse(body).imdbRating}\nRotten Tomatoes Score: ${JSON.parse(body).Ratings[1].Value}\nCountry of Production: ${JSON.parse(body).Country}\nLanguage: ${JSON.parse(body).Language}\nPlot: ${JSON.parse(body).Plot}\nActors: ${JSON.parse(body).Actors}\n------\n`, function(err) {
             });
         }
     });
@@ -189,6 +198,11 @@ function getSays(){
             userFunction = dataArr[0];
             // element 1 will hold the parameters for the function to be run with
             userParameters = dataArr[1];
+            // write this event to the log file
+            getTimeStamp();
+            fs.appendFile("log.txt",`***New Log Entry at ${timeStamp}***\nThe random.txt function was called by the user`,function(err){
+                console.log("there was an error writing to the log.txt file");
+            });
             // trigger switcher() to make the call happen with the above options
             switcher();
         }
