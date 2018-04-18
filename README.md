@@ -1,5 +1,5 @@
 # WHAT DOES LIRI DO? 
-*This is a simple node.js program that accepts 4 different functions and a few parameters to execute some basic file and API functions. You can use it to get information from Spotify about a song, information from OMDB about a movie, or get the last 20 tweets from a twitter account. This program will output the results of searches to the console. It will also write the results of searches to a log.txt file and add a timestamp to each entry in the text file. It requires an environment file with API keys in order to work. 
+This is a simple node.js program that accepts 4 different functions and a few parameters to execute some basic file and API functions. You can use it to get information from Spotify about a song, information from OMDB about a movie, or get the last 20 tweets from a twitter account. This program will output the results of searches to the console. It will also write the results of searches to a log.txt file and add a timestamp to each entry in the text file. It requires an environment file with API keys in order to work. 
 
 # SET UP LIRI
 *You will need your own Twitter, Spotify, and OMDB API Keys for the program to work on your computer*
@@ -37,13 +37,13 @@ TWITTER_ACCESS_TOKEN_SECRET=your twitter access token secret goes here
  * do-what-it-says
     * this function automatically runs a function with parameters imported from the random.txt file
 3. Parameters 
- * song name
- * twitter username
+  * song name
+     * twitter username
  * movie title
 4. Examples:
  * To get the last 20 tweets from Donald Trump's twitter, run the following command:
-  * node liri.js my-tweets realDonaldTrump
+   * node liri.js my-tweets realDonaldTrump
  * To get information on the song "The Chosen" by Unearth from Sporitfy, run the following command:
-  * node liri.js spotify-this-song the chosen unearth
+   * node liri.js spotify-this-song the chosen unearth
  * To get information on the movie Aladdin, run the following command: 
-  * node liri.js movie-this Aladdin
+   * node liri.js movie-this Aladdin
