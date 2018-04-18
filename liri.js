@@ -61,7 +61,6 @@ function switcher(){
 
 // Part 1: command: node liri.js my-tweets
 // This will show your last 20 tweets and when they were created at in your terminal/bash window.
-
 function getTwitter(){
     //parameters that will be passed with the "get" call below
 	var parameters = {
@@ -93,8 +92,7 @@ function getTwitter(){
         // The song's name
         // A preview link of the song from Spotify
         // The album that the song is from
-    // If no song is provided then your program will default to "The Sign" by Ace of Base
-
+    // If no song is provided then the program will default to "The Sign" by Ace of Base
 function getSpotify(){
 
 	let searchTerm;
@@ -128,7 +126,16 @@ function getSpotify(){
 	    }
 	});
 }
-
+// STEP 3: command: node liri.js movie-this '<movie name here>'
+// this should return... 
+// * Title of the movie.
+//    * Year the movie came out.
+//    * IMDB Rating of the movie.
+//    * Rotten Tomatoes Rating of the movie.
+//    * Country where the movie was produced.
+//    * Language of the movie.
+//    * Plot of the movie.
+//    * Actors in the movie.
 function getMovie(){
     // this is exactly the same logic as the spotify function starts with
     // if there are search terms (aka userParameters), use them in the query
@@ -159,9 +166,36 @@ function getMovie(){
     });
 }
 
+// STEP 4: command: node liri.js do-what-it-says
+// Using the fs Node package, LIRI will take the text inside of random.txt and then use it to call one of LIRI's commands.
+// It should run spotify-this-song for "I Want it That Way," as follows the text in random.txt
+// Feel free to change the text in that document to test out the feature for other commands.
 function getSays(){
+    fs.readFile("random.txt", "utf8", function(error, data) {
+        // If the code experiences any errors it will log the error to the console
+        if (error) {
+          return console.log(`There was a file error ${error}`);
+        }
+        else{
+            // split the text in the file into two different elements of an array
+            let dataArr = data.split(",");
+            // element 0 will hold the function to be run
+            userFunction = dataArr[0];
+            // element 1 will hold the parameters for the function to be run with
+            userParameters = dataArr[1];
+            // trigger switcher() to make the call happen with the above options
+            switcher();
+        }
 
+    });
 }
 
-// activate the switcher
+// global state: activate the switcher
 switcher();
+
+// stretch/bonus goals: 
+// 1. output the data to a .txt file called log.txt.
+// 2. Make sure you append each command you run to the log.txt file
+// 3. Do not overwrite your file each time you run a command
+
+
