@@ -26,16 +26,16 @@ TWITTER_ACCESS_TOKEN_SECRET=your twitter access token secret goes here
 
 # HOW TO USE LIRI
 1. Syntax
- * node liri.js <function> <parameters>
+   * node liri.js <function> <parameters>
 2. Functions 
  * my-tweets
    * this function searches twitter for the last 20 tweets by a user
  * spotify-this-song
-  * this function searches spotify for information on a song
+    * this function searches spotify for information on a song
  * movie-this
-  * this function searches OMDB for information about a movie
+    * this function searches OMDB for information about a movie
  * do-what-it-says
-  * this function automatically runs a function with parameters imported from the random.txt file
+    * this function automatically runs a function with parameters imported from the random.txt file
 3. Parameters 
  * song name
  * twitter username
