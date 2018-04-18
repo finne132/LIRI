@@ -100,7 +100,7 @@ function getSpotify(){
 
 	let searchTerm;
 	if(userParameters === undefined){
-        searchTerm = "The Sign by Ace of Base";
+        searchTerm = "The Sign Ace of Base";
         console.log("no search term was detected, searching for The Sign by Ace of Base");
 	}else{
         // if there are search terms, use the userParameter that was formatted by our for loop
@@ -131,6 +131,17 @@ function getSpotify(){
 }
 
 function getMovie(){
+
+    // this is exactly the same logic as the spotify function starts with
+    // if there are search terms (aka userParameters), use them in the query
+    // if there are not search terms, use a pre-defined default search
+    let searchTerm;
+	if(userParameters === undefined){
+		searchTerm = "Mr. Nobody";
+	}else{
+		searchTerm = userParameters;
+	};
+
 
 }
 
