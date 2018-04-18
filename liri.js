@@ -201,7 +201,9 @@ function getSays(){
             // write this event to the log file
             getTimeStamp();
             fs.appendFile("log.txt",`***New Log Entry at ${timeStamp}***\nThe random.txt function was called by the user`,function(err){
+                if(err){
                 console.log("there was an error writing to the log.txt file");
+                }
             });
             // trigger switcher() to make the call happen with the above options
             switcher();
