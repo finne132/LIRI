@@ -87,15 +87,47 @@ function getTwitter(){
 	});
 } 
 
-function getSpotify(){
-    // command: node liri.js spotify-this-song '<song name here>'
+// PART 2: SPOTIFY
+// command: node liri.js spotify-this-song '<song name here>'
     // this will call to spotify and return the following information about the song: 
         // Artist(s)
         // The song's name
         // A preview link of the song from Spotify
         // The album that the song is from
-    // If no song is provided then your program will default to "The Sign" by Ace of Base.
+    // If no song is provided then your program will default to "The Sign" by Ace of Base
 
+function getSpotify(){
+
+	let searchTerm;
+	if(userParameters === undefined){
+        searchTerm = "The Sign by Ace of Base";
+        console.log("no search term was detected, searching for The Sign by Ace of Base");
+	}else{
+        // if there are search terms, use the userParameter that was formatted by our for loop
+		searchTerm = userParameters;
+	}
+	//execute the spotify search using the searchTerm
+	spotifyKeys.search({type:'track', query:searchTerm}, function(error,data){
+	    if(error){
+	        console.log(`The call to Spotify encountered an error: ${error}`);
+	        return;
+	    }else{
+            // if no error was encountered, print the return data: 
+	  		console.log("Artist Name: " + data.tracks.items[0].artists[0].name);
+            console.log("Song Name: " + data.tracks.items[0].name);
+
+            // check to see if the preview URL returned is null. Spotify returns null for preview URL 
+            // when you query a song that is not available to stream in your region. If it is null, return 
+            // some information to that effect. If it's not null, return the preview URL
+            if (data.tracks.items[0].preview_url == null){
+                console.log("Preview URL is not available - song is not available to stream in your region")
+            }
+            else{
+                console.log("Preview URL: " + data.tracks.items[0].preview_url);
+            };
+	        console.log("Album Name: " + data.tracks.items[0].album.name);
+	    }
+	});
 }
 
 function getMovie(){
