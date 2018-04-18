@@ -28,20 +28,17 @@ var userParameters = process.argv[3];
 // since userParameters starts with whatever is in the [3] position of the command line argument
 // I am adding a loop here to take any and all arguments after position 3 and append them to 
 // whatever was entered in position 3 using plus signs because that's what the spotify API uses 
-
-// example input: this is the song name
-// example output: this+is+the+song+name 
-
 for(let i=4; i<process.argv.length; i++){
 	userParameters += `+${process.argv[i]}`;
 }
+// example input: this is the song name
+// example output: this+is+the+song+name 
 
 function switcher(){
 	switch(userFunction){
 
         // if the user enters my-tweets, run getTweets()
         case 'my-tweets':
-        console.log("my tweets entered")
 		getTwitter();
 		break;
 
@@ -84,6 +81,7 @@ function getTwitter(){
 	        }
         }
         else {
+            // if error is true, log to the console that we ran into an error and instruct the user to try again
             console.log("THERE WAS AN ERROR PLEASE TRY AGAIN")
         };
 	});
