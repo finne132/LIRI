@@ -20,10 +20,24 @@ console.log("twitterKeys is " + JSON.stringify(twitterKeys));
 // Part 0: we need a switch structure to read in command line arguments and execute the associated functions
 
 // pass in the 3rd argument from the command line to the switcher function
-let userCommand = process.argv[2];
+let userFunction = process.argv[2];
+
+var userParameters = process.argv[3];
+
+// handler for multiple-word user paramaeters (song or movie names, etc)
+// since userParameters starts with whatever is in the [3] position of the command line argument
+// I am adding a loop here to take any and all arguments after position 3 and append them to 
+// whatever was entered in position 3 using plus signs because that's what the spotify API uses 
+
+// example input: this is the song name
+// example output: this+is+the+song+name 
+
+for(let i=4; i<process.argv.length; i++){
+	userParameters += `+${process.argv[i]}`;
+}
 
 function switcher(){
-	switch(userCommand){
+	switch(userFunction){
 
         // if the user enters my-tweets, run getTweets()
         case 'my-tweets':
@@ -76,6 +90,13 @@ function getTwitter(){
 } 
 
 function getSpotify(){
+    // command: node liri.js spotify-this-song '<song name here>'
+    // this will call to spotify and return the following information about the song: 
+        // Artist(s)
+        // The song's name
+        // A preview link of the song from Spotify
+        // The album that the song is from
+    // If no song is provided then your program will default to "The Sign" by Ace of Base.
 
 }
 
