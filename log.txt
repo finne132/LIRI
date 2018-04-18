@@ -1,0 +1,60 @@
+NEW SONG QUERIED:
+Artist Name: Gorillaz
+Song Name: Feel Good Inc
+Preview URL: https://p.scdn.co/mp3-preview/7388c425022ced92b1caa7f73bcf0cb3080aee47?cid=71f0bea385a846f2af13b0ff3c866e64
+Album Name:Demon Days
+------
+NEW SONG QUERIED:
+Artist Name: Ace of Base
+Song Name: The Sign
+Preview URL: https://p.scdn.co/mp3-preview/4c463359f67dd3546db7294d236dd0ae991882ff?cid=71f0bea385a846f2af13b0ff3c866e64
+Album Name:The Sign (US Album) [Remastered]
+------
+NEW MOVIE QUERIED:
+Title: Mr. Nobody
+Year: 2009
+IMDB Rating: 7.9
+Rotten Tomatoes Score: 66%
+Country of Production: Belgium, Germany, Canada, France, USA, UK
+Language: English, Mohawk
+Plot: A boy stands on a station platform as a train is about to leave. Should he go with his mother or stay with his father? Infinite possibilities arise from this decision. As long as he doesn't choose, anything is possible.
+Actors: Jared Leto, Sarah Polley, Diane Kruger, Linh Dan Pham
+------
+NEW MOVIE QUERIED:
+Title: The Dark Knight
+Year: 2008
+IMDB Rating: 9.0
+Rotten Tomatoes Score: 94%
+Country of Production: USA, UK
+Language: English, Mandarin
+Plot: When the menace known as the Joker emerges from his mysterious past, he wreaks havoc and chaos on the people of Gotham, the Dark Knight must accept one of the greatest psychological and physical tests of his ability to fight injustice.
+Actors: Christian Bale, Heath Ledger, Aaron Eckhart, Michael Caine
+------
+NEW MOVIE QUERIED:
+Title: The Incredibles
+Year: 2004
+IMDB Rating: 8.0
+Rotten Tomatoes Score: 90/100
+Country of Production: USA
+Language: English, French
+Plot: A family of undercover superheroes, while trying to live the quiet suburban life, are forced into action to save the world.
+Actors: Craig T. Nelson, Holly Hunter, Samuel L. Jackson, Jason Lee
+------
+NEW SONG QUERIED:
+Artist Name: Biqram
+Song Name: Slip into Darkness
+Preview URL: https://p.scdn.co/mp3-preview/4583b6dbb9623c7cf9cfddff314d81ea97128b5a?cid=71f0bea385a846f2af13b0ff3c866e64
+Album Name:Slip into Darkness
+------
+NEW SONG QUERIED:
+Artist Name: Dream Evil
+Song Name: The Chosen Ones
+Preview URL: https://p.scdn.co/mp3-preview/516371ed5b30dc8b83bb7dc0892219ce0d95c68b?cid=71f0bea385a846f2af13b0ff3c866e64
+Album Name:Dragonslayer
+------
+NEW SONG QUERIED:
+Artist Name: Unearth
+Song Name: The Chosen
+Preview URL: https://p.scdn.co/mp3-preview/7912f873fdc93e9ea67a6c034fcd9e7066223b41?cid=71f0bea385a846f2af13b0ff3c866e64
+Album Name:The March
+------
