@@ -26,7 +26,7 @@ var userParameters = process.argv[3];
 // handler for multiple-word user paramaeters (song or movie names, etc)
 // since userParameters starts with whatever is in the [3] position of the command line argument
 // I am adding a loop here to take any and all arguments after position 3 and append them to 
-// whatever was entered in position 3 using plus signs because that's what the spotify API uses 
+// whatever was entered in position 3 using plus signs because that's what the APIs like 
 for(let i=4; i<process.argv.length; i++){
 	userParameters += `+${process.argv[i]}`;
 }
