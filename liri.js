@@ -62,9 +62,11 @@ function switcher(){
 // Part 1: command: node liri.js my-tweets
 // This will show your last 20 tweets and when they were created at in your terminal/bash window.
 function getTwitter(){
+    let twitterAccount;
+    twitterAccount=userParameters;
     //parameters that will be passed with the "get" call below
 	var parameters = {
-		screen_name: 'FerdaAMZNPrizes', // your twitter screen name
+		screen_name: twitterAccount, // your twitter screen name
 		count: 20 // how many tweets you want returned
     };
 
