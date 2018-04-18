@@ -22,7 +22,7 @@ TWITTER_ACCESS_TOKEN_SECRET=your twitter access token secret goes here
 ```
 4. Save the .env file 
 5. run npm -i 
- * this will install all of the node packages that this program needs to run 
+   * this will install all of the node packages that this program needs to run 
 
 # HOW TO USE LIRI
 1. Syntax
