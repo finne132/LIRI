@@ -25,5 +25,17 @@ function getTweets(){
 	var parameters = {
 		screen_name: 'FerdaAMZNPrizes',
 		count: 20
-	};
+    };
+    twitterKeys.get('statuses/user_timeline', parameters, function(error, tweets, response){
+		if (!error) {
+	        for (let i=0; i<tweets.length; i++) {
+	            var returnedData = ('Number: ' + (i+1) + '\n' + tweets[i].created_at + '\n' + tweets[i].text + '\n');
+	            console.log(returnedData);
+	            console.log("-------------------------");
+	        }
+	    };
+	});
 } 
+
+console.log("I am now going to get the tweets");
+getTweets();
