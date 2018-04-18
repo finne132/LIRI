@@ -12,11 +12,6 @@ var fs = require('fs');
 var spotifyKeys = new Spotify(keys.spotify);
 var twitterKeys = new Twitter(keys.twitter);
 
-// print the key values to the console
-// ***WARNING: REMOVE THIS AS SOON AS POSSIBLE*** 
-console.log("spotifyKeys is " + JSON.stringify(spotifyKeys));
-console.log("twitterKeys is " + JSON.stringify(twitterKeys));
-
 // Part 0: we need a switch structure to read in command line arguments and execute the associated functions
 
 // pass in the 3rd argument from the command line to the switcher function
