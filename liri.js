@@ -26,7 +26,8 @@ function switcher(){
 	switch(userCommand){
 
         // if the user enters my-tweets, run getTweets()
-		case 'my-tweets':
+        case 'my-tweets':
+        console.log("my tweets entered")
 		getTwitter();
 		break;
 
@@ -85,3 +86,6 @@ function getMovie(){
 function getSays(){
 
 }
+
+// activate the switcher
+switcher();
