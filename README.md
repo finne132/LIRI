@@ -29,7 +29,7 @@ TWITTER_ACCESS_TOKEN_SECRET=your twitter access token secret goes here
  * node liri.js <function> <parameters>
 2. Functions 
  * my-tweets
-  * this function searches twitter for the last 20 tweets by a user
+  ** this function searches twitter for the last 20 tweets by a user
  * spotify-this-song
   * this function searches spotify for information on a song
  * movie-this
