@@ -122,7 +122,9 @@ function getSpotify(){
             else{
                 console.log("Preview URL: " + data.tracks.items[0].preview_url);
             };
-	        console.log("Album Name: " + data.tracks.items[0].album.name);
+            console.log("Album Name: " + data.tracks.items[0].album.name);
+            fs.appendFile("log.txt", `NEW SONG QUERIED:\nArtist Name: ${data.tracks.items[0].artists[0].name}\nSong Name: ${data.tracks.items[0].name}\nPreview URL: ${data.tracks.items[0].preview_url}\nAlbum Name:${data.tracks.items[0].album.name}\n------\n`,function(err) {
+            });
 	    }
 	});
 }
@@ -158,10 +160,9 @@ function getMovie(){
 	        console.log("Country of Production: " + JSON.parse(body).Country);
 	        console.log("Language: " + JSON.parse(body).Language);
 	        console.log("Plot: " + JSON.parse(body).Plot);
-	        console.log("Actors: " + JSON.parse(body).Actors);
-        }
-        else{
-            console.log(`An error occurred with the OMDB API call: ${error}`)
+            console.log("Actors: " + JSON.parse(body).Actors);
+            fs.appendFile("log.txt", `NEW MOVIE QUERIED:\nTitle: ${JSON.parse(body).Title}\nYear: ${JSON.parse(body).Year}\nIMDB Rating: ${JSON.parse(body).imdbRating}\nRotten Tomatoes Score: ${JSON.parse(body).Ratings[1].Value}\nCountry of Production: ${JSON.parse(body).Country}\nLanguage: ${JSON.parse(body).Language}\nPlot: ${JSON.parse(body).Plot}\nActors: ${JSON.parse(body).Actors}\n------\n`, function(err) {
+            });
         }
     });
 }
@@ -197,5 +198,3 @@ switcher();
 // 1. output the data to a .txt file called log.txt.
 // 2. Make sure you append each command you run to the log.txt file
 // 3. Do not overwrite your file each time you run a command
-
-
