@@ -131,7 +131,6 @@ function getSpotify(){
 }
 
 function getMovie(){
-
     // this is exactly the same logic as the spotify function starts with
     // if there are search terms (aka userParameters), use them in the query
     // if there are not search terms, use a pre-defined default search
@@ -142,18 +141,21 @@ function getMovie(){
 		movieSearchTerm = userParameters;
 	};
 
-    let queryURL = 'http://www.omdbapi.com/?t=' + movieSearchTerm +'&y=&plot=short&tomatoes=true&r=json&apikey=trilogy';
+    let queryURL = 'http://www.omdbapi.com/?t=' + movieSearchTerm +'&apikey=trilogy&y=&plot=short&tomatoes=true&r=json';
     request(queryURL, function(error, response, body){
 	    if(!error && response.statusCode == 200){
-	        console.log("Title: " + JSON.parse(body)["Title"]);
-	        console.log("Year: " + JSON.parse(body)["Year"]);
-            console.log("IMDB Rating: " + JSON.parse(body)["imdbRating"]);
-            console.log("Rotten Tomatoes Rating: " + JSON.parse(body)["tomatoRating"]);
-	        console.log("Country of Production: " + JSON.parse(body)["Country"]);
-	        console.log("Language: " + JSON.parse(body)["Language"]);
-	        console.log("Plot: " + JSON.parse(body)["Plot"]);
-	        console.log("Actors: " + JSON.parse(body)["Actors"]);
-	    }
+	        console.log("Title: " + JSON.parse(body).Title);
+	        console.log("Year: " + JSON.parse(body).Year);
+            console.log("IMDB Rating: " + JSON.parse(body).imdbRating);
+            console.log("Rotten Tomatoes Score: " + JSON.parse(body).Ratings[1].Value);
+	        console.log("Country of Production: " + JSON.parse(body).Country);
+	        console.log("Language: " + JSON.parse(body).Language);
+	        console.log("Plot: " + JSON.parse(body).Plot);
+	        console.log("Actors: " + JSON.parse(body).Actors);
+        }
+        else{
+            console.log(`An error occurred with the OMDB API call: ${error}`)
+        }
     });
 }
 
