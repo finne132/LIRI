@@ -4,8 +4,10 @@ This is a simple node.js program that accepts 4 different functions and a few pa
 # SET UP LIRI
 *You will need your own Twitter, Spotify, and OMDB API Keys for the program to work on your computer*
 1. Clone this repository to your local computer
-2. Create a blank .env file inside the repository folder
-3. Copy and paste the following code into .env, replacing each value with your own API Key values
+2. run npm -i 
+   * this will install all of the node packages that this program needs to run 
+3. Create a blank .env file inside the repository folder
+4. Copy and paste the following code into .env, replacing each value with your own API Key values
 
 ```
 # Spotify API keys
@@ -20,9 +22,7 @@ TWITTER_CONSUMER_SECRET=your twitter consume secret goes here
 TWITTER_ACCESS_TOKEN_KEY=your twitter access token key goes here
 TWITTER_ACCESS_TOKEN_SECRET=your twitter access token secret goes here
 ```
-4. Save the .env file 
-5. run npm -i 
-   * this will install all of the node packages that this program needs to run 
+5. Save the .env file to the root directory of the program
 
 # HOW TO USE LIRI
 1. Syntax
